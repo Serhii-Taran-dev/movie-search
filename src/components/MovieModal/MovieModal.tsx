@@ -19,7 +19,6 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
     };
 
     window.addEventListener('keydown', handleEsc);
-
     document.body.style.overflow = 'hidden';
 
     return () => {
@@ -36,27 +35,18 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
 
   const imageUrl = movie.backdrop_path
     ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
-    : `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    : movie.poster_path
+      ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+      : null;
 
   return createPortal(
-    <div
-      className={css.backdrop}
-      role="dialog"
-      aria-modal="true"
-      onClick={handleBackdropClick}
-    >
+    <div className={css.backdrop} role="dialog" aria-modal="true" onClick={handleBackdropClick}>
       <div className={css.modal}>
-        <button
-          className={css.closeButton}
-          onClick={onClose}
-          aria-label="Close modal"
-        >
+        <button className={css.closeButton} onClick={onClose} aria-label="Close modal">
           &times;
         </button>
 
-        {imageUrl && (
-          <img src={imageUrl} alt={movie.title} className={css.image} />
-        )}
+        {imageUrl && <img src={imageUrl} alt={movie.title} className={css.image} />}
 
         <div className={css.content}>
           <h2>{movie.title}</h2>
@@ -70,6 +60,6 @@ export default function MovieModal({ movie, onClose }: MovieModalProps) {
         </div>
       </div>
     </div>,
-    modalRoot
+    modalRoot,
   );
 }
