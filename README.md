@@ -1,21 +1,22 @@
-Movie Search
+## Movie Search
 
 A responsive movie search application built with React and TypeScript. Users can search for movies, browse paginated results, and view detailed movie information using data from the TMDB API.
 
-Live Demo
+### Live Demo
 
 [View Live Demo](https://04-react-query-mu-ashy.vercel.app/)
 
-Screenshots
+### Screenshots
 
 ![Movie Search — Search Results1](./screenshots/movie-search-001.png)
+
 ![Movie Search — Search Results2](./screenshots/movie-search-002.png)
 
-About the Project & Features
+### About the Project & Features
 
 Movie Search is a responsive web application for searching and exploring movies.
 
-Features
+#### Features
 
 - Search movies by title
 - Paginated search results
@@ -30,7 +31,7 @@ Features
 
 The application uses React Query to manage server state, cache requests, and preserve previously loaded results while navigating between pages.
 
-Technologies
+### Technologies
 
 - React
 - TypeScript
@@ -42,8 +43,9 @@ Technologies
 - Vite
 - TMDB API
 
-Project Structure
+### Project Structure
 
+```text
 src/
 ├── components/
 │ ├── App/
@@ -58,41 +60,43 @@ src/
 │ └── movie.ts
 ├── global.css
 └── main.tsx
+```
 
 The project follows a component-based architecture with separate modules for UI components, API communication, and TypeScript types.
 
-Getting Started
+### Getting Started
 
-1. Clone the repository
+#### 1. Clone the repository
 
    git clone https://github.com/Serhii-Taran-dev/movie-search.git
    cd movie-search
 
-2. Install dependencies
+#### 2. Install dependencies
 
    npm install
 
-3. Configure environment variables
+#### 3. Configure environment variables
 
 Create a .env file in the project root and add your TMDB API token:
 
 VITE_TMDB_TOKEN=your_tmdb_token
 
-4. Start the development server
+#### 4. Start the development server
 
 npm run dev
 
 The application will be available at the local address provided by Vite.
 
-Environment Variables
+### Environment Variables
 
 The application requires the following environment variable:
 
-Variable Description
-VITE_TMDB_TOKEN TMDB API Bearer token
+| Variable | Description |
+| --- | --- |
+| `VITE_TMDB_TOKEN` | TMDB API Bearer token |
 
-Author
+### Author
 
-Serhii Taran
+#### Serhii Taran
 
 - GitHub: Serhii-Taran-dev
