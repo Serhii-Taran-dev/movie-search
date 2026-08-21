@@ -20,7 +20,7 @@ export default function MovieGrid({ movies, onSelect }: MovieGridProps) {
                 loading="lazy"
               />
             ) : (
-              <div className={css.image}>No image available</div>
+              <div className={css.noImage}>No image available</div>
             )}
 
             <h2 className={css.title}>{movie.title}</h2>
