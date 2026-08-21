@@ -69,6 +69,7 @@ The project follows a component-based architecture with separate modules for UI 
 #### 1. Clone the repository
 
    git clone https://github.com/Serhii-Taran-dev/movie-search.git
+   
    cd movie-search
 
 #### 2. Install dependencies
