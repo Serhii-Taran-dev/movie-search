@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+Movie Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive movie search application built with React and TypeScript. Users can search for movies, browse paginated results, and view detailed movie information using data from the TMDB API.
 
-Currently, two official plugins are available:
+Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[View Live Demo](https://04-react-query-mu-ashy.vercel.app/)
 
-## React Compiler
+Screenshots
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+![Movie Search — Search Results1](./screenshots/movie-search-001.png)
+![Movie Search — Search Results2](./screenshots/movie-search-002.png)
 
-## Expanding the ESLint configuration
+About the Project & Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Movie Search is a responsive web application for searching and exploring movies.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Search movies by title
+- Paginated search results
+- Movie details displayed in a modal window
+- Movie poster and backdrop images
+- Release date and rating information
+- Loading and error states
+- Notification when no movies are found
+- Lazy loading for movie poster images
+- Keyboard support for closing the modal with Escape
+- Graceful handling of movies without poster images
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The application uses React Query to manage server state, cache requests, and preserve previously loaded results while navigating between pages.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Technologies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React
+- TypeScript
+- React Query
+- Axios
+- React Paginate
+- React Hot Toast
+- CSS Modules
+- Vite
+- TMDB API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Project Structure
+
+src/
+├── components/
+│ ├── App/
+│ ├── ErrorMessage/
+│ ├── Loader/
+│ ├── MovieGrid/
+│ ├── MovieModal/
+│ └── SearchBar/
+├── services/
+│ └── movieService.ts
+├── types/
+│ └── movie.ts
+├── global.css
+└── main.tsx
+
+The project follows a component-based architecture with separate modules for UI components, API communication, and TypeScript types.
+
+Getting Started
+
+1. Clone the repository
+
+   git clone https://github.com/Serhii-Taran-dev/movie-search.git
+   cd movie-search
+
+2. Install dependencies
+
+   npm install
+
+3. Configure environment variables
+
+Create a .env file in the project root and add your TMDB API token:
+
+VITE_TMDB_TOKEN=your_tmdb_token
+
+4. Start the development server
+
+npm run dev
+
+The application will be available at the local address provided by Vite.
+
+Environment Variables
+
+The application requires the following environment variable:
+
+Variable Description
+VITE_TMDB_TOKEN TMDB API Bearer token
+
+Author
+
+Serhii Taran
+
+- GitHub: Serhii-Taran-dev
